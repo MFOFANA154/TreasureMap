@@ -116,7 +116,7 @@ public class FileIO {
             for (Treasure treasure : Map.treasuresList) {
                 if(treasure.getTreasuresLeft() >  0 )
                 myWriter.write("T - " + treasure.getPosition().getX() + " - " + treasure.getPosition().getY() + " - "
-                        + (treasure.getTreasuresNumbers() - treasure.getTreasuresLeft()) + "\n");
+                        + (treasure.getTreasuresLeft()) + "\n");
             }
 
             myWriter.write(
