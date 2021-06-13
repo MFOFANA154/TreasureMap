@@ -267,7 +267,7 @@ public class Map {
 				}
 			}
 			if (mountFound == false && oldPosition != explorer.getPosition())
-				explore(explorer.getPosition().getY() - 1, explorer.getPosition().getX(), explorer);
+				explore(explorer.getPosition().getY(), explorer.getPosition().getX() - 1, explorer);
 				oldPosition.setX(explorer.getPosition().getX());
 				oldPosition.setY(explorer.getPosition().getY());
 		}
