@@ -1,9 +1,13 @@
 package treasuremap.src.models;
 
+
+/**
+ * Modèle Trésor
+ */
 public class Treasure {
-    private Position position;
-    private int treasuresNumbers;
-    private int treasuresLeft;
+    private Position position; // Position du trésor
+    private int treasuresNumbers; // Nombre de trésors
+    private int treasuresLeft; // Trésors restants
 
     public Treasure(){}
 

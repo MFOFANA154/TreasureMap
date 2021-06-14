@@ -12,8 +12,15 @@ import treasuremap.src.models.Mount;
 import treasuremap.src.models.Position;
 import treasuremap.src.models.Treasure;
 
+/**
+ * Gestion de la lecture et de l'écriture du fichier
+ */
+
 public class FileIO {
 
+    /**
+     * Lecture du fichier d'entrée
+     */
     public void readFileForMap() {
 
         try {
@@ -100,6 +107,9 @@ public class FileIO {
         }
     }
 
+    /**
+     * Ecriture du fichier de sortie
+     */
     public void writeFileForMap() {
 
         try {

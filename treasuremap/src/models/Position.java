@@ -1,8 +1,11 @@
 package treasuremap.src.models;
 
-public class Position implements Comparable {
-    public int x;
-    public int y;
+/**
+ * Modèle Position
+ */
+public class Position  {
+    public int x; // Horizontal
+    public int y; // Vertical
 
     public Position() {
     }
@@ -53,27 +56,27 @@ public class Position implements Comparable {
         return true;
     }
 
-    @Override
-	public int compareTo(Object other) {
-		if(other instanceof Position){
-			if(this.x > ((Position)other).getX()
-					|| this.y > ((Position)other).getY()) {
-				return 1;
-			}else if (this.x == ((Position)other).getX() 
-					&& this.y == ((Position)other).getY()){
-				return 0;
-			}
-		}
-		return -1;
-	}
+    // @Override
+	// public int compareTo(Object other) {
+	// 	if(other instanceof Position){
+	// 		if(this.x > ((Position)other).getX()
+	// 				|| this.y > ((Position)other).getY()) {
+	// 			return 1;
+	// 		}else if (this.x == ((Position)other).getX() 
+	// 				&& this.y == ((Position)other).getY()){
+	// 			return 0;
+	// 		}
+	// 	}
+	// 	return -1;
+	// }
 
-    public boolean isGreaterThan(Position otherPosition){
-		return this.compareTo(otherPosition) > 0;
-	}
+    // public boolean isGreaterThan(Position otherPosition){
+	// 	return this.compareTo(otherPosition) > 0;
+	// }
 
-	public boolean isLesserThan(Position otherPosition){
-		return this.compareTo(otherPosition) < 0;
-	}
+	// public boolean isLesserThan(Position otherPosition){
+	// 	return this.compareTo(otherPosition) < 0;
+	// }
     
 
 }

@@ -1,19 +1,24 @@
 package treasuremap.src.models;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import treasuremap.exceptions.MapException;
-
+/**
+ * Modèle Carte
+ */
 public class Map {
-	public static Position perimeter;
-	public static List<Mount> mountsList = new ArrayList<>();
-	public static List<Treasure> treasuresList = new ArrayList<>();
-	public static List<Explorer> explorersList = new ArrayList<>();
-	HashMap<Position, Box> mapCase;
+	public static Position perimeter; // Périmètre de la carte
+	public static List<Mount> mountsList = new ArrayList<>(); // Liste de montagenes
+	public static List<Treasure> treasuresList = new ArrayList<>(); // Liste de trésors
+	public static List<Explorer> explorersList = new ArrayList<>(); // Liste d'aventuriers
+	//HashMap<Position, Box> mapCase;
 	public static Position oldPosition = new Position();
 
+	/**
+	 * Création de la carte
+	 * @throws MapException
+	 */
 	public static void createMap() throws MapException {
 
 		System.out.println("Carte actuelle");
@@ -22,6 +27,7 @@ public class Map {
 			for (int j = 0; j < perimeter.x; j++) {
 				found = false;
 				for (Explorer explorer : explorersList) {
+
 					Position explorerPosition = new Position();
 					explorerPosition.setX(explorer.getPosition().getX());
 					explorerPosition.setY(explorer.getPosition().getY());
@@ -58,6 +64,9 @@ public class Map {
 
 	}
 
+	/**
+	 * Simulation du mouvement de l'aventurier
+	 */
 	public static void simulateMovement() {
 		for (Explorer explorer : explorersList) {
 			for (int i = 0; i < explorer.getSequence().length(); i++) {
@@ -66,6 +75,11 @@ public class Map {
 		}
 	}
 
+	/**
+	 * Mouvement de l'aventurier
+	 * @param Explorer explorer
+	 * @param Direction direction
+	 */
 	public static void move(Explorer explorer, String direction) {
 		switch (explorer.getOrientation()) {
 			// Orientation NORD
@@ -149,6 +163,8 @@ public class Map {
 		}
 	}
 
+
+
 	// SOUTH
 	private static void sForward(Explorer explorer) {
 		boolean mountFound = false;
@@ -201,6 +217,8 @@ public class Map {
 			oldPosition.setY(explorer.getPosition().getY());
 		}
 	}
+
+
 
 	// NORTH
 	private static void nForward(Explorer explorer) {
@@ -255,6 +273,8 @@ public class Map {
 		}
 	}
 
+
+
 	// WEST
 	private static void wForward(Explorer explorer) {
 		boolean mountFound = false;
@@ -308,6 +328,8 @@ public class Map {
 
 	}
 
+
+
 	// EAST
 	private static void eForward(Explorer explorer) {
 		boolean mountFound = false;
@@ -360,6 +382,13 @@ public class Map {
 		}
 	}
 
+
+	/**
+	 * Exploration de la case
+	 * @param int y
+	 * @param int x
+	 * @param Explorer explorer
+	 */
 	private static void explore(int y, int x, Explorer explorer) {
 		Position position = new Position();
 
@@ -381,6 +410,10 @@ public class Map {
 
 	}
 
+
+	/**
+	 * Mise à jour de la carte
+	 */
 	public static void majMap() {
 
 		System.out.println("Carte mise à jour");
@@ -431,6 +464,10 @@ public class Map {
 	// return true;
 	// }
 
+	/**
+	 * Détection d'une montagne
+	 * @param Montagne mount
+	 */
 	public static void mountFound(Mount mount) {
 		System.out.println(
 				"MONTAGNE LOCALISEE : " + " M - " + mount.getPosition().getX() + " - " + mount.getPosition().getY());

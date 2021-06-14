@@ -1,7 +1,10 @@
 package treasuremap.src.models;
 
+/**
+ * Modèle montagne
+ */
 public class Mount {
-    private Position position;
+    private Position position; // Position de la montagne
     
     public Mount() {
 
